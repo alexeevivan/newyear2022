@@ -1,130 +1,486 @@
-.container {
-    position: relative;
-    height: auto;
-    display: flex;
+body {
+    font-family: 'SF Pro Display';
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-areas: "left_aside info right_aside";
+    grid-template-columns: 5% 1fr 5%;
+    grid-column-gap: 0%;
+    background: #ccc url(../video/IMG_6112.MOV) no-repeat center center;
+    -webkit-background: #ccc url(../video/IMG_6112.MOV) no-repeat center center;
+    -webkit-background-size: cover;
+    background-size: cover;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.container .serviceBox {
+    margin:0;
     position: relative;
-    width: 200px;
-    height: 200px;
-    background: rgba(29, 46, 48);
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0);
-    transition: 1s;
-    cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
     -moz-user-select: none;
-    -o-user-select: none;
+    -webkit-user-select: none;
     -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
-.container .serviceBox:hover {
-    border: 1px solid goldenrod;
-    transition: 1s;
+#left_aside {
+    grid-area: left_aside;
+    position: fixed;
+    overflow: auto;
+    display: block;
+    height: 100vh;
 }
-.container .serviceBox:active {
-    width:340px;
-    height: 270px;
+#info {
+    grid-area: info;
 }
-.container .serviceBox .icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--i);
-    transition: 0.5s;
-    display: flex;
+#right_aside {
+    grid-area: right_aside;
+    position: fixed;
+    overflow: auto;
+    display: block;
+    height: 100vh;
+}
+.block {
+    display: grid;
+    height: auto;
+    width: 90%;
+    height: 96%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    grid-template-areas: "main_side additional_side";
+    grid-template-columns: 70% 1fr;
+    grid-column-gap: 0%;
     justify-content: center;
-    align-items: center;
-    z-index: 2;
-    transition-delay: 0.25s;
+    border: 1px solid goldenrod;
+    border-radius: 10px;
 }
-.container .serviceBox:hover .icon {
-    top: 10px;
-    left: calc(50% - 15px);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    transition-delay: 0s;
+#main_side{
+    grid-area: main_side;
+    background: linear-gradient(to right, rgba(29, 46, 48, 0.9), rgba(29, 46, 48));
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: goldenrod;
+    cursor: default;
+    border-right: 1px transparent;
 }
-.container .serviceBox:active .icon {
-    top: 10px;
-    left: calc(50% - 15px);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    transition-delay: 0s;
+#additional_side {
+    grid-area: additional_side;
+    overflow: auto;
+    display: block;
+    height: 100%;
+    background: goldenrod;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 1px transparent;
+    color: rgba(29, 46, 48);
+    cursor: default;
 }
-.container .serviceBox .icon span {
-    font-size: 5em;
-    color: #fff;
-    transition: 0.5s;
-    transition-delay: 0.25s;
-}
-.container .serviceBox:hover .icon span {
-    font-size: 2em;
-    transition-delay: 0s;
-}
-.container .serviceBox:active .icon span {
-    font-size: 2em;
-    transition-delay: 0s;
-}
-.container .serviceBox .icon p {
+#main_side img {
     position: absolute;
-    margin-top: 50px;
-    color: silver;
-    font-size: 1.5em;
-    transition: 2.25s;
-    transform: scale(1);
-    font-family: 'SF Pro Display';
+    margin-top: 7px;
 }
-.container .serviceBox:hover .icon p {
-    color: transparent;
-    transform: scale(0);
-    transition: 0.25s;
-    color: silver;
+#main_side h4 {
+    margin-left: 0px;
 }
-.container .serviceBox:active .icon p {
-    color: transparent;
-    transform: scale(0);
-    transition: 0.25s;
-    color: silver;
-}
-.container .serviceBox .content {
-    position: relative;
-    color: #fff;
-    text-align: center;
-    margin-top: 50px;
-    z-index: 1;
-    transform: scale(0);
-    transition: 0.5s;
-    transition-delay: 0s;
-}
-.container .serviceBox:hover .content {
-    transform: scale(1);
-    transition-delay: 0.25s;
-    color: silver;
-}
-.container .serviceBox:active .content {
-    transform: scale(1);
-    transition-delay: 0.25s;
-    color: silver;
-}
-.container .serviceBox .content h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-family: 'SF Pro Display';
-}
-.menu_description {
-    line-height: 1.5em;
-    font-family: 'SF Pro Display';
+#main_side p {
     font-size: 14px;
     text-align: center;
-    margin-left: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#main_side ul li {
+    list-style-type: none;
+    margin-left: 30px;
+    font-size: 12px;
+}
+#main_side .experience {
+    margin-top: -7px; 
+}
+#left_side_footer {
+    grid-area: left_side_footer;
+}
+#right_side_footer {
+    grid-area: right_side_footer;
+}
+#left_side_footer .github_account, #right_side_footer .school_account {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 1s;
+    padding-bottom: 5%;
+}
+#left_side_footer .github_account:hover, #right_side_footer .school_account:hover {
+    filter:invert(100%);
+}
+a {
+    font-size: 13px;
+    text-decoration: none;
+}
+p a {
+    color: goldenrod;
+    text-decoration: none;
+    transition: 1s;
+}
+p a:hover {
+    color: #ef0c4c;
+}
+footer {
+    display: grid;
+    grid-template-areas: "left_side_footer right_side_footer";
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 0%;
+    height: 100px;
+    background: linear-gradient(to right, rgb(50, 47, 41), goldenrod);
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid goldenrod;
+}
+hr {
+    width: 70%;
+    background-color: goldenrod;
+    height: 1px;
+    border: none;
+}
+.dishes {
+    list-style: none;
+    text-align: center;
+    font-family: Gill Sans;
+    font-weight: lighter;
+}
+.dishes a{
+    color: goldenrod;
+    line-height: 3em;
+    font-size: 20px;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.dishes a:hover{
+    color: silver;
+    background-size: 100% 2px;
+    transition: 0.5s;
+    transform: translateX(5%);
+}
+.avatar_side {
+    margin-left: auto;
+    margin-right: auto;
+    width: 125px;
+    height: 125px;
+}
+.avatar_side img {
+    border-radius: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.color_changing {
+    color: goldenrod;
+    transition: 1s;
+}
+.color_changing:hover {
+    color: #ef0c4c;
+}
+.code_example {
+    width: 80%;
+    height: 250px;
+    background: linear-gradient(to right, #000000, #1c0336);
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid goldenrod;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: block;
+}
+.code_example_js {
+    white-space: pre-line;
+}
+.education_info_lang a, .education_info_block a {
+    font-size: 10px;
+    display: block;
+    margin-top: 5px;
+    text-decoration: none;
+    color: rgb(50, 47, 41);
+}
+.extra_info{
+    color: #ef0c4c;
+    transition: 1s;
+}
+.extra_info:hover{
+    color: #9dff00;
+    transition: 1s;
+    cursor: default;
+}
+.extra_info_muted {
+    color: #ef0c4c;
+}
+.goal, .experience_text {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: 0.5s;
+}
+.goal:hover, .experience_text:hover {
+    color: goldenrod;
+    transition: 0.5s;
+    background-size: 38% 2px;
+    transform: translateX(5%);
+}
+.personal_info_header {
+    height: 5%;
+    border-bottom: 10px solid;
+    border-left: 1px transparent;
+}
+.personal_info_block {
+    border-bottom: 10px solid;
+}
+.personal_info_block ul {
+    padding-inline-start: 5px;
+}
+.personal_info_block ul li {
+    list-style-type: none;
+    margin: 0px;
+    padding-inline-start: 15px;
+}
+.personal_info_header span, .skills_info_header span {
+    font-size: 25px;
+    text-align: center;
+    display: block;
+    margin-top: 11%;
+}
+.skills_info_header {
+    height: 4%;
+    border-bottom: 10px solid;
+}
+.skills_info_header img {
+    position: absolute;
+    margin-left: -27px;
+    width: 55px;
+    height: 55px;
+    margin-top: -10px;
+}
+.skills_info_block, .education_info_lang {
+    border-bottom: 10px solid;
+    border-bottom-style: double;
+}
+.skills_info_block span, .education_info_lang span, .education_info_block span {
+    font-family: PingFang TC;
+    font-style: normal;
+    padding-inline-start: 5px;
+}
+.skills_info_block ul, .education_info_lang ul, .education_info_block ul {
+    padding: 0;
+    margin-left: 20px;
+}
+.skills_info_block ul {
+    margin-top: 5px;
+}
+.education_info_lang ul, .education_info_block ul {
+    margin-top: 10px;
+}
+.skills_info_block ul li, .education_info_lang ul li, .education_info_block ul li {
+    list-style-type: none;
+    font-size: 13px;
+}
+
+
+summary {
+    outline-style: none;
+    cursor: pointer;
+}
+
+
+/* media-query element (min-width) starts from 280px for Galaxe Fold */
+@media (min-width: 280px) and (max-width: 768px) {
+    body {
+        grid-template-columns: 2% 1fr 2%;
+        height: 100%;
+    }
+    .block{
+        display: block;
+        width: 80%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: 10%;
+        justify-content: center;
+        border: 1px solid goldenrod;
+        border-radius: 10px;
+        height: auto;
+    }
+    #main_side {
+        grid-area: main_side;
+        background: linear-gradient(to right, rgba(29, 46, 48, 0.9), rgba(29, 46, 48));
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+        width: 100%;
+        padding-left: 0px;
+        padding-bottom: 2%;
+        padding-top: 2%;
+        color: goldenrod;
+        cursor: default;
+        border-right: 1px transparent;
+    }
+    #additional_side {
+        overflow: auto;
+        display: block;
+        height: auto;
+        background: goldenrod;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-left: 1px transparent;
+        color: rgb(50, 47, 41);
+        cursor: default;
+    }
+    #main_side p {
+        padding-right: 5%;
+    }
+    #main_side h4, #main_side p {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5%;
+    }
+    #main_side ul li {
+        margin-left: -5%;
+        padding-right: 10%;
+    }
+    #avatar_side {
+        margin-top: 5%;
+    }
+    h1 {
+        margin-left: 5%;
+    }
+    .job_position {
+        display: block;
+        margin-left: 5%;
+    }
+    .code_example {
+        height: 100%;
+        padding: 5%;
+        width: 80%
+    }
+    .code_example_js {
+        font-size: 12px;
+    }
+    .goal_img {
+        display: none;
+    }
+    footer {
+        display: none;
+    }
+    .personal_info_header span, .skills_info_header span {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .skills_info_header img {
+        margin-top: -15px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1100px){
+    .code_example {
+        width: 92%;
+        height: 300px;
+        margin-left: 0px;
+    }
+    .code_example_js {
+        font-size: 12px;
+    }
+}
+/* iPhone 6/7/8 landscape-mode */
+@media only screen
+    and (device-height: 375px)
+    and (device-width: 667px)
+    and (-webkit-device-pixel-ratio: 2)
+    and (orientation: landscape) {
+        body {
+            grid-template-columns: 2% 1fr 2%;
+        }
+        .personal_info_block ul {
+            padding: 0px;
+            white-space: normal;
+        }
+        .code_example {
+            width: 92%;
+            height: 300px;
+            padding: 0px;
+        }
+        .code_example_js {
+            font-size: 11px;
+        }
+        .skills_info_header {
+            height: 3%;
+        }
+        #main_side ul li {
+            margin-left: 20px;
+            padding-right: 20px;
+        }
+        li a {
+            font-size: 11px;
+        }
+        .personal_info_block ul span {
+            padding-inline-start: 5%;
+        }
+}
+/* iPhone 6 Plus/7 Plus/8 Plus landscape-mode */
+@media only screen
+    and (device-height: 414px)
+    and (device-width: 736px)
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: landscape) {
+        body {
+            grid-template-columns: 2% 1fr 2%;
+        }
+        .code_example {
+            width: 92%;
+            height: 300px;
+            padding: 0px;
+        }
+        .code_example_js {
+            font-size: 12px;
+        }
+        .skills_info_header {
+            height: 3%;
+        }
+        #main_side ul li {
+            margin-left: 20px;
+            padding-right: 20px;
+        }
+    }
+/* iPhone X portrait-mode */
+@media only screen
+    and (device-width: 375px)
+    and (device-height: 812px)
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) {
+        body {
+            grid-template-columns: 2% 1fr 2%;
+        }
+    }
+/* iPhone X landscape-mode */
+@media only screen
+    and (device-width: 812px)
+    and (device-height: 375px)
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: landscape) {
+        body {
+            grid-template-columns: 2% 1fr 2%;
+        }
+        .code_example {
+            width: 92%;
+            height: 250px;
+            padding: 0px;
+        }
+        .code_example_js {
+            font-size: 12px;
+        }
+        .skills_info_header {
+            height: 3%;
+        }
+    }
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        height: 100%;
+    }
 }
